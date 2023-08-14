@@ -1,0 +1,11 @@
+;; This is creation bytecode which will return 0x30ff when run
+PUSH2 0x30ff ;; value
+PUSH0 ;; offset
+MSTORE
+
+PUSH1 2 ;; size
+PUSH1 30 ;; offset
+RETURN
+
+;; The above code, compiled:
+;; 0x6130ff5f526002601ef3
