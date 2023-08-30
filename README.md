@@ -28,6 +28,12 @@ await ethereum.request({
 });
 ```
 
+## EIP-6780
+
+[EIP-6780](https://eips.ethereum.org/EIPS/eip-6780) updates the behavior of the `SELFDESTRUCT` opcode so that a smart contract calling `SELFDESTRUCT` will only delete itself when it's called in the same transaction that created it.
+
+Since the `deployer.evm` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
+
 ## References
 - [Best way to burn ethers and other ethereum tokens?](https://ethereum.stackexchange.com/questions/16188/best-way-to-burn-ethers-and-other-ethereum-tokens/17617)
 - [Burner.sol](https://etherscan.io/address/0xb69fba56b2e67e7dda61c8aa057886a8d1468575)
