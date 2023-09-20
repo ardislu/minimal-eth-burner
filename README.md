@@ -39,3 +39,4 @@ Since the `deployer.evm` bytecode creates a new smart contract and then immediat
 ## References
 - [Best way to burn ethers and other ethereum tokens?](https://ethereum.stackexchange.com/questions/16188/best-way-to-burn-ethers-and-other-ethereum-tokens/17617)
 - [Burner.sol](https://etherscan.io/address/0xb69fba56b2e67e7dda61c8aa057886a8d1468575)
+- [Burn.sol (from Optimism)](https://github.com/ethereum-optimism/optimism/blob/eb68d8395971bc4a125cd0fd07567547f5bc0c49/packages/contracts-bedrock/contracts/libraries/Burn.sol#L33-L42)
