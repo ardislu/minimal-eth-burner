@@ -12,7 +12,8 @@ This repository contains the minimal amount of code to create a new smart contra
 
 See example JavaScript below. Copy this code into the DevTools console in any web browser where you have a wallet (e.g., MetaMask) installed.
 
-**WARNING: all ETH sent in this transaction will be irreversibly destroyed.**
+> [!WARNING]<br>
+> All ETH sent in this transaction will be irreversibly destroyed.
 
 ```javascript
 const addr = (await ethereum.request({ method: 'eth_requestAccounts' }))[0]; // Your current wallet address
