@@ -10,7 +10,7 @@ This repository contains the minimal amount of code to create a new smart contra
 
 ## Usage
 
-See example JavaScript below. Copy this code into the DevTools console in any web browser where you have a wallet (e.g., MetaMask) installed.
+See example JavaScript below. Copy this code into the DevTools console in any web browser where you have an [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) wallet (e.g., MetaMask) installed.
 
 > [!WARNING]<br>
 > All ETH sent in this transaction will be irreversibly destroyed.
