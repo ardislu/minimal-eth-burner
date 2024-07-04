@@ -31,6 +31,31 @@ await ethereum.request({
 });
 ```
 
+If you have multiple wallets installed, use the [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963) `eip6963:requestProvider` event to select which wallet you want to use:
+
+```javascript
+const wallets = [];
+window.addEventListener('eip6963:announceProvider', e => wallets.push(e.detail));
+window.dispatchEvent(new Event('eip6963:requestProvider'));
+console.table(wallets.map(w => w.info.name));
+const { provider } = wallets[0]; // Replace 0 with the index of the wallet you want to use
+
+// The remainder is the same as above except using `provider` instead of `ethereum`
+const addr = (await provider.request({ method: 'eth_requestAccounts' }))[0]; // Your current wallet address
+const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.evm, compiled
+const burn = '100000000000000000'; // Amount of ETH to burn (in wei)
+
+// Irreversibly destroys all ETH sent
+await provider.request({
+  method: 'eth_sendTransaction',
+  params: [{
+    from: addr,
+    data: deployer,
+    value: `0x${BigInt(burn).toString(16)}`
+  }]
+});
+```
+
 ## EIP-6780
 
 [EIP-6780](https://eips.ethereum.org/EIPS/eip-6780) updates the behavior of the `SELFDESTRUCT` opcode so that a smart contract calling `SELFDESTRUCT` will only delete itself when it's called in the same transaction that created it.
