@@ -1,8 +1,8 @@
 # minimal-eth-burner
 
-In Ethereum, it's common to send ETH to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead) to effectively "burn" (destroy) ETH.
+In Ethereum, it's common to "burn" (destroy) ETH by sending it to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead).
 
-However, this ETH is theoretically recoverable if the private key for this public address is ever discovered. The only way to actually destroy ETH is by either:
+However, any ETH sent to burner addresses is theoretically recoverable if the private keys associated with the burner addresses are ever discovered. The only way to actually destroy ETH is by either:
 - Burning it in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) or [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) transaction base gas fees, or
 - Sending ETH to a smart contract which calls `SELFDESTRUCT` and sends its ETH to itself.
 
@@ -58,7 +58,7 @@ await provider.request({
 
 ## EIP-6780
 
-[EIP-6780](https://eips.ethereum.org/EIPS/eip-6780) updates the behavior of the `SELFDESTRUCT` opcode so that a smart contract calling `SELFDESTRUCT` will only delete itself when it's called in the same transaction that created it.
+[EIP-6780](https://eips.ethereum.org/EIPS/eip-6780) (which went live in the [Dencun upgrade](https://eips.ethereum.org/EIPS/eip-7569) in March 2024) updates the behavior of the `SELFDESTRUCT` opcode so that a smart contract calling `SELFDESTRUCT` will only delete itself when it's called in the same transaction that created it.
 
 Since the `deployer.evm` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
 
