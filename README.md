@@ -1,6 +1,6 @@
 # minimal-eth-burner
 
-In Ethereum, it's common to "burn" (destroy) ETH by sending it to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead).
+On Ethereum, it's common to "burn" (destroy) ETH by sending it to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead).
 
 However, any ETH sent to burner addresses is theoretically recoverable if the private keys associated with the burner addresses are ever discovered. The only way to actually destroy ETH is by either:
 - Burning it in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) or [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) transaction base gas fees, or
@@ -12,7 +12,7 @@ This repository contains the minimal amount of code to create a new smart contra
 
 See example JavaScript below. Copy this code into the DevTools console in any web browser where you have an [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) wallet (e.g., MetaMask) installed.
 
-> [!WARNING]<br>
+> [!CAUTION]<br>
 > All ETH sent in this transaction will be irreversibly destroyed.
 
 ```javascript
