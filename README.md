@@ -31,6 +31,8 @@ await ethereum.request({
 });
 ```
 
+## Multiple wallets
+
 If you have multiple wallets installed, use the [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963) `eip6963:requestProvider` event to select which wallet you want to use:
 
 ```javascript
