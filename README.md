@@ -17,7 +17,7 @@ See example JavaScript below. Copy this code into the DevTools console in any we
 
 ```javascript
 const addr = (await ethereum.request({ method: 'eth_requestAccounts' }))[0]; // Your current wallet address
-const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.evm, compiled
+const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.eas, assembled
 const burn = '100000000000000000'; // Amount of ETH to burn (in wei)
 
 // Irreversibly destroys all ETH sent
@@ -44,7 +44,7 @@ const { provider } = wallets[0]; // Replace 0 with the index of the wallet you w
 
 // The remainder is the same as above except using `provider` instead of `ethereum`
 const addr = (await provider.request({ method: 'eth_requestAccounts' }))[0]; // Your current wallet address
-const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.evm, compiled
+const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.eas, assembled
 const burn = '100000000000000000'; // Amount of ETH to burn (in wei)
 
 // Irreversibly destroys all ETH sent
@@ -62,7 +62,7 @@ await provider.request({
 
 [EIP-6780](https://eips.ethereum.org/EIPS/eip-6780) (which went live in the [Dencun upgrade](https://eips.ethereum.org/EIPS/eip-7569) in March 2024) updates the behavior of the `SELFDESTRUCT` opcode so that a smart contract calling `SELFDESTRUCT` will only delete itself when it's called in the same transaction that created it.
 
-Since the `deployer.evm` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
+Since the `deployer.eas` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
 
 ## References
 - [Best way to burn ethers and other ethereum tokens?](https://ethereum.stackexchange.com/questions/16188/best-way-to-burn-ethers-and-other-ethereum-tokens/17617)

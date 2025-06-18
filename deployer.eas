@@ -2,7 +2,7 @@
 ;; 1. Create a new smart contract using burner.evm
 ;; 2. Call the new smart contract
 
-;; burner.evm, compiled
+;; burner.evm, assembled
 PUSH10 0x6130ff5f526002601ef3 ;; value
 PUSH0 ;; offset
 MSTORE
@@ -21,5 +21,5 @@ DUP6 ;; address
 GAS ;; gas
 CALL
 
-;; This smart contract, compiled:
+;; This smart contract, assembled:
 ;; 0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1
