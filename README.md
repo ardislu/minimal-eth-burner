@@ -2,9 +2,9 @@
 
 On Ethereum, it's common to "burn" (destroy) ETH by sending it to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead).
 
-However, any ETH sent to burner addresses is theoretically recoverable if the private keys associated with the burner addresses are ever discovered. The only way to actually destroy ETH is by either:
-- Burning it in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) or [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) transaction base gas fees, or
-- Sending ETH to a smart contract which calls `SELFDESTRUCT` and sends its ETH to itself.
+However, ETH sent to burner addresses is theoretically recoverable if private keys associated with the burner addresses are ever discovered. The only way to actually destroy ETH is by either:
+- Burning it in transaction base gas fees, or
+- Sending ETH to a smart contract which calls `SELFDESTRUCT` and sends its ETH to itself in the same transaction that the smart contract is created.
 
 This repository contains the minimal amount of code to create a new smart contract that immediately calls `SELFDESTRUCT` and sends its ETH to itself. All ETH sent to the smart contract creation transaction will be irreversibly destroyed.
 
@@ -33,7 +33,7 @@ await ethereum.request({
 
 ## Multiple wallets
 
-If you have multiple wallets installed, use the [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963) `eip6963:requestProvider` event to select which wallet you want to use:
+If you have multiple wallets installed, use the [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963) events to select which wallet you want to use:
 
 ```javascript
 const wallets = [];
@@ -66,5 +66,5 @@ Since the `deployer.evm` bytecode creates a new smart contract and then immediat
 
 ## References
 - [Best way to burn ethers and other ethereum tokens?](https://ethereum.stackexchange.com/questions/16188/best-way-to-burn-ethers-and-other-ethereum-tokens/17617)
-- [Burner.sol](https://etherscan.io/address/0xb69fba56b2e67e7dda61c8aa057886a8d1468575)
-- [Burn.sol (from Optimism)](https://github.com/ethereum-optimism/optimism/blob/eb68d8395971bc4a125cd0fd07567547f5bc0c49/packages/contracts-bedrock/contracts/libraries/Burn.sol#L33-L42)
+- [Burner.sol](https://etherscan.io/address/0xb69fba56b2e67e7dda61c8aa057886a8d1468575#code)
+- [Burn.sol (from Optimism)](https://github.com/ethereum-optimism/optimism/blob/f273e18a17c655f791671d614620c9541cd5cea5/packages/contracts-bedrock/src/libraries/Burn.sol#L24-L32)
