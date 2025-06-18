@@ -64,6 +64,15 @@ await provider.request({
 
 Since the `deployer.eas` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
 
+## Assembly
+
+Use [`geas`](https://github.com/fjl/geas) to assemble the files:
+
+```
+geas burner.eas
+geas deployer.eas
+```
+
 ## References
 - [Best way to burn ethers and other ethereum tokens?](https://ethereum.stackexchange.com/questions/16188/best-way-to-burn-ethers-and-other-ethereum-tokens/17617)
 - [Burner.sol](https://etherscan.io/address/0xb69fba56b2e67e7dda61c8aa057886a8d1468575#code)
