@@ -16,8 +16,8 @@ See example JavaScript below. Copy this code into the DevTools console in any we
 > All ETH sent in this transaction will be irreversibly destroyed.
 
 ```javascript
-const addr = (await ethereum.request({ method: 'eth_requestAccounts' }))[0]; // Your current wallet address
-const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.eas, assembled
+const addr = (await ethereum.request({ method: 'eth_requestAccounts' }))[0]; // Current address
+const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // See deployer.eas
 const burn = '100000000000000000'; // Amount of ETH to burn (in wei)
 
 // Irreversibly destroys all ETH sent
@@ -43,8 +43,8 @@ console.table(wallets.map(w => w.info.name));
 const { provider } = wallets[0]; // Replace 0 with the index of the wallet you want to use
 
 // The remainder is the same as above except using `provider` instead of `ethereum`
-const addr = (await provider.request({ method: 'eth_requestAccounts' }))[0]; // Your current wallet address
-const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // deployer.eas, assembled
+const addr = (await provider.request({ method: 'eth_requestAccounts' }))[0]; // Current address
+const deployer = '0x696130ff5f526002601ef35f52600a601634f05f5f5f5f5f855af1'; // See deployer.eas
 const burn = '100000000000000000'; // Amount of ETH to burn (in wei)
 
 // Irreversibly destroys all ETH sent
