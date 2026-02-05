@@ -8,6 +8,8 @@ However, ETH sent to burner addresses is theoretically recoverable if private ke
 
 This repository contains the minimal amount of code to create a new smart contract that immediately calls `SELFDESTRUCT` and sends its ETH to itself. All ETH sent to the smart contract creation transaction will be irreversibly destroyed.
 
+Code repository mirrors: [GitHub](https://github.com/ardislu/minimal-eth-burner), [Codeberg](https://codeberg.org/ardislu/minimal-eth-burner), [git.ardis.lu](https://git.ardis.lu/minimal-eth-burner)
+
 ## Usage
 
 See example JavaScript below. Copy this code into the DevTools console in any web browser where you have an [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) wallet (e.g., MetaMask) installed.
