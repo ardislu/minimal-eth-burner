@@ -66,6 +66,10 @@ await provider.request({
 
 Since the `deployer.eas` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
 
+## EIP-8246
+
+[EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) is a **proposed** EIP which will disable this method of burning ETH.
+
 ## Assembly
 
 Use [`geas`](https://github.com/fjl/geas) to assemble the files:
