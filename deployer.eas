@@ -3,25 +3,25 @@
 ;;; 2. Call the new smart contract
 
 ;; burner.evm, assembled
-PUSH10 0x6130ff5f526002601ef3 ; value
-PUSH0 ; offset
-MSTORE
+PUSH10 0x6130ff5f526002601ef3 ; [value]
+PUSH0                         ; [offset, value]
+MSTORE                        ; []
 
 ;; Preload stack for CALL
-PUSH0 ; retSize
-PUSH0 ; retOffset
-PUSH0 ; argsSize
-PUSH0 ; argsOffset
-PUSH0 ; value
+PUSH0 ; [retSize]
+PUSH0 ; [retOffset, retSize]
+PUSH0 ; [argsSize, retOffset, retSize]
+PUSH0 ; [argsOffset, argsSize, retOffset, retSize]
+PUSH0 ; [value, argsOffset, argsSize, retOffset, retSize]
 
   ;; address for CALL
-  PUSH1 10 ; size
-  PUSH1 22 ; offset
-  CALLVALUE ; value
-  CREATE
+  PUSH1 10  ; [size, ...]
+  PUSH1 22  ; [offset, size, ...]
+  CALLVALUE ; [value, offset, size, ...]
+  CREATE    ; [address, value, argsOffset, argsSize, retOffset, retSize]
 
-GAS ; gas
-CALL
+GAS  ; [gas, address, value, argsOffset, argsSize, retOffset, retSize]
+CALL ; []
 
 ;;; This smart contract, assembled:
 ;;; 0x696130ff5f526002601ef35f525f5f5f5f5f600a601634f05af1

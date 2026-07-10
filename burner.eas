@@ -1,12 +1,12 @@
 ;;; This is creation bytecode which will return 0x30ff when run
 
-PUSH2 0x30ff ; value
-PUSH0 ; offset
-MSTORE
+PUSH2 0x30ff ; [value]
+PUSH0        ; [offset, value]
+MSTORE       ; []
 
-PUSH1 2 ; size
-PUSH1 30 ; offset
-RETURN
+PUSH1 2  ; [size]
+PUSH1 30 ; [offset, size]
+RETURN   ; []
 
 ;;; The above code, assembled:
 ;;; 0x6130ff5f526002601ef3
