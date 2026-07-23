@@ -14,7 +14,7 @@ Code repository mirrors: [GitHub](https://github.com/ardislu/minimal-eth-burner)
 
 See example JavaScript below. Copy this code into the DevTools console in any web browser where you have an [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) wallet (e.g., MetaMask) installed.
 
-> [!CAUTION]<br>
+> [!CAUTION]
 > All ETH sent in this transaction will be irreversibly destroyed.
 
 ```javascript
