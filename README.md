@@ -68,7 +68,7 @@ Since the `deployer.eas` bytecode creates a new smart contract and then immediat
 
 ## EIP-8246
 
-[EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) (scheduled for inclusion in [Glamsterdam](https://eips.ethereum.org/EIPS/eip-7773)) will disable this method of burning ETH.
+[EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) (scheduled for inclusion in [Glamsterdam](https://eips.ethereum.org/EIPS/eip-7773), targeting [November 2026](https://forkcast.org/schedule/)) will disable this method of burning ETH.
 
 ## Assembly
 
