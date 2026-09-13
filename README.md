@@ -1,5 +1,8 @@
 # minimal-eth-burner
 
+> [!IMPORTANT]
+> [EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) (scheduled for inclusion in [Glamsterdam](https://eips.ethereum.org/EIPS/eip-7773), targeting [November 2026](https://forkcast.org/schedule/)) will disable this method of burning ETH.
+
 On Ethereum, it's common to "burn" (destroy) ETH by sending it to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead).
 
 However, ETH sent to burner addresses is theoretically recoverable if private keys associated with the burner addresses are ever discovered. The only way to actually destroy ETH is by either:
@@ -65,10 +68,6 @@ await provider.request({
 [EIP-6780](https://eips.ethereum.org/EIPS/eip-6780) (which went live in the [Dencun upgrade](https://eips.ethereum.org/EIPS/eip-7569) in March 2024) updates the behavior of the `SELFDESTRUCT` opcode so that a smart contract calling `SELFDESTRUCT` will only delete itself when it's called in the same transaction that created it.
 
 Since the `deployer.eas` bytecode creates a new smart contract and then immediately calls it in the same transaction, its behavior is not changed by EIP-6780.
-
-## EIP-8246
-
-[EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) (scheduled for inclusion in [Glamsterdam](https://eips.ethereum.org/EIPS/eip-7773), targeting [November 2026](https://forkcast.org/schedule/)) will disable this method of burning ETH.
 
 ## Assembly
 
