@@ -1,7 +1,7 @@
 # minimal-eth-burner
 
 > [!IMPORTANT]
-> [EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) (scheduled for inclusion in [Glamsterdam](https://eips.ethereum.org/EIPS/eip-7773), targeting [November 2026](https://forkcast.org/schedule/)) will disable this method of burning ETH.
+> [EIP-8246](https://eips.ethereum.org/EIPS/eip-8246) (scheduled for inclusion in [Glamsterdam](https://eips.ethereum.org/EIPS/eip-7773), targeting [December 2026](https://forkcast.org/schedule/)) will disable this method of burning ETH.
 
 On Ethereum, it's common to "burn" (destroy) ETH by sending it to a "burner address" like [`0x000000000000000000000000000000000000dead`](https://etherscan.io/address/0x000000000000000000000000000000000000dead).
 
